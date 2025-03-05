@@ -54,6 +54,7 @@ public class ScriptRunner
     private string RemoveComments(string line)
     {
         // Remove everything after the Lua comment marker (“--”).
+        line = line.Replace("'", "\"");
         int commentIndex = line.IndexOf("--");
         if (commentIndex >= 0)
         {
